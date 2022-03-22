@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}<title>Events</title>{% endblock %}
+{% set active_page = "home" %}
+
+{% block content %}
+<!-- container for tablular structure: 1 row -->
+<div class="container">
+    <div class="row">
+
+        <!-- column 1 -->
+        <div class="col-sm-12">
+            <h3>Events</h3>
+
+            <p>Upcoming events</p>
+            <ul>
+                <li>April Fools staff potluck 04/01/22</li>
+                <li>Field trip to Apple Headquarters, Sacremento CA 06/12/22</li>
+                <li>Sponsored meal with Amazon 06/22/22</li>
+                <li>Fourth of July staff potluck 07/04/22</li>
+            </ul>
+
+            <p>Please let a manager or superior know if you are interested in partaking in any of these events at least
+                1 week before the date! </p>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

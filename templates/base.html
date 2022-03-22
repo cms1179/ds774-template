@@ -31,8 +31,8 @@
     <!-- rounded -->
     <!-- <img src="{{url_for('static',filename='UNH.png')}}" class="rounded-circle" alt=""> -->
 
-    <h1>Your Name</h1>
-    <p>This site is all about ME!</p>
+    <h1>Swift and Co.</h1>
+    <p>Expanding Technology</p>
   </div>
 
 
@@ -49,14 +49,16 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    <!-- Navigation Bar Links, Update as Necessary for your pages -->
 
+    <!-- Navigation Bar Links, Update as Necessary for your pages -->
     {% set navigation_bar = [
-        (url_for('home'), 'home', 'Home'),
-        (url_for('courses'), 'courses', 'Courses'),
-        (url_for('contact'), 'contact', 'Contact'),
-        (url_for('admin'), 'admin', 'Admin')
+        (url_for('documents'), 'documents', 'Documents'),
+        (url_for('announcements'), 'announcements, 'Annoucements'),
+        (url_for('directory'), 'directory', 'Directory'),
+        (url_for('events'), 'events', 'Events'),
+        (url_for('issues'), 'issues', 'Issues Log')
     ] -%}
+
     <!-- Loop to set proper link active in Navbar -->
     {% set active_page = active_page|default('home') -%}
     <div class="collapse navbar-collapse" id="navbar">
@@ -78,7 +80,7 @@
 <footer class="footer text-center">
   <!-- Copyright -->
   <div class="container">
-        <span class="text-muted">&copy;Your Name 2022</span>
+        <span class="text-muted">&copy;Catherine Swift 2022</span>
   </div>
 </footer>
 
