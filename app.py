@@ -33,22 +33,22 @@ def documents():
 def events():
     return render_template('events.html')
 
-# @app.route('/contact', methods=['GET', 'POST'])
-# def contact():
-#     message = ''
-#     if request.method == 'POST':
-#         fname = request.form['fname']
-#         lname = request.form['lname']
-#         eaddress = request.form['eaddress']
-#         message = request.form['message']
-#         result = contact_form(fname, lname, eaddress, message)
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    message = ''
+    if request.method == 'POST':
+        fname = request.form['fname']
+        lname = request.form['lname']
+        eaddress = request.form['eaddress']
+        message = request.form['message']
+        result = contact_form(fname, lname, eaddress, message)
 
-#         if result:
-#             return render_template('contact.html', message='Thank you for your submission')
-#         else:
-#             return render_template('contact.html', message='Error with submission')
-#     else:
-#         return render_template('contact.html', message=message)
+        if result:
+            return render_template('contact.html', message='Thank you for your submission')
+        else:
+            return render_template('contact.html', message='Error with submission')
+    else:
+        return render_template('contact.html', message=message)
 
 
 @app.route("/admin", methods=['GET', 'POST'])
