@@ -1,7 +1,8 @@
 from os import error
 import re
 from flask import Flask, render_template, request, url_for, redirect, session
-from templates.admin import contact_form,login_user, get_records, get_single_record, edit_record, delete_record, add_user, get_user
+from templates.admin import login_user, get_records, get_single_record, edit_record, delete_record, add_user, get_user, contact_form
+
 
 app = Flask(__name__)
 
