@@ -21,7 +21,7 @@ def contact_form(fname, lname, eaddress, message):
     
     conn = connect_to_db()
 
-    sql = f"INSERT INTO issues(fname,lname,eaddress,message) VALUES('{fname}', '{lname}', '{eaddress}', '{message}');"
+    sql = f"INSERT INTO contacts(fname,lname,eaddress,message) VALUES('{fname}', '{lname}', '{eaddress}', '{message}');"
     try:
 
         # create a new cursor
