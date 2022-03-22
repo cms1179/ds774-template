@@ -8,21 +8,26 @@ app = Flask(__name__)
 
 app.secret_key = "IAN"
 
+
 @app.route("/")
 def home():
     return render_template('home.html')
+
 
 @app.route("/announcements")
 def announcements():
     return render_template('announcements.html')
 
+
 @app.route("/directory")
 def directory():
     return render_template('directory.html')
 
+
 @app.route("/documents")
 def documents():
     return render_template('documents.html')
+
 
 @app.route("/events")
 def events():
@@ -44,6 +49,7 @@ def events():
 #             return render_template('contact.html', message='Error with submission')
 #     else:
 #         return render_template('contact.html', message=message)
+
 
 @app.route("/admin", methods=['GET', 'POST'])
 def admin():
@@ -67,16 +73,28 @@ def admin():
                 session['user_id'] = result
                 records = get_records()
                 # print(records)
-            
+
             # login was not sucessful, show error message
             else:
                 error = 'Invalid Username or Password'
-        
+
         # if form was logout button, end user session
-        elif request.form.get('admin')  == 'Logout':
+        elif request.form.get('admin') == 'Logout':
             session.pop('user_id')
 
-        
+        elif request.form.get('issuelog') == 'issue':
+            fname = request.form['fname']
+            lname = request.form['lname']
+            eaddress = request.form['eaddress']
+            message = request.form['message']
+            result = contact_form(fname, lname, eaddress, message)
+
+            if result:
+                return render_template('admin.html', message='Thank you for your submission')
+            else:
+                return render_template('admin.html', message='Error with submission')
+
+
     # if user is logged in previously, show data. If no session, data is not retireved
     if 'user_id' in session:
         records = get_records()
