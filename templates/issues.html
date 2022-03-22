@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}<title>Issues</title>{% endblock %}
-{% set active_page = "home" %}
+{% block title %}<title>Issue Log</title>{% endblock %}
+{% set active_page = "issues" %}
 
 {% block content %}
 <!-- container for tablular structure: 1 row & 1 column -->
@@ -60,13 +60,10 @@
           <input class="form-control" type="text" name="username" placeholder="Username" required /><br />
           <input class="form-control" type="password" name="password" placeholder="Password" required /> <br />
           <input class="btn btn-primary btn-lg" name="admin" type="submit" value="Login" />
-          <a href = "{{ url_for('register')}}" class = "btn btn-primary btn-lg"
-          <p>Not registered yet? <a href='registration.php'>Register Here</a></p>
-        </form>
+          <a href="{{ url_for('register')}}" class="btn btn-primary btn-lg" </div>
+            {% endif %}
       </div>
-      {% endif %}
     </div>
   </div>
-</div>
 
-{% endblock %}
+  {% endblock %}
