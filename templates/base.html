@@ -52,11 +52,12 @@
 
     <!-- Navigation Bar Links, Update as Necessary for your pages -->
     {% set navigation_bar = [
+        (url_for('home'), 'home', 'Home')
         (url_for('documents'), 'documents', 'Documents'),
         (url_for('announcements'), 'announcements, 'Annoucements'),
         (url_for('directory'), 'directory', 'Directory'),
         (url_for('events'), 'events', 'Events'),
-        (url_for('issues'), 'issues', 'Issues Log')
+        (url_for('admin'), 'admin', 'Issues Log')
     ] -%}
 
     <!-- Loop to set proper link active in Navbar -->
